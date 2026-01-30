@@ -17,10 +17,10 @@
         </div>
     </div>
 
-    <p-table [value]="recepcionistas" [tableStyle]="{ 'min-width': '50rem' }">
+    <p-table [value]="recepcionistas" [tableStyle]="{ 'min-width': '50rem' }"
+        [paginator]="true" [rows]="5" [rowsPerPageOptions]="[5, 10, 20]">
         <ng-template #header>
             <tr>
-                <th>Código</th>
                 <th>Nome</th>
                 <th>Status</th>
                 <th>
@@ -30,7 +30,6 @@
         </ng-template>
         <ng-template #body let-recepcionista>
             <tr>
-                <td>{{ recepcionista.id }}</td>
                 <td>{{ recepcionista.nome }}</td>
                 <td>
                     <app-registro-status-tag [status]="recepcionista.status" />

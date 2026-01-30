@@ -1,5 +1,5 @@
 export interface RecepcionistaResponseModel {
-    id: number;
+    id: string;
     nome: string;
     status: boolean;
 }
