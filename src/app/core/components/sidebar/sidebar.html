@@ -13,4 +13,21 @@
         </a>
         }
     </nav>
+
+    @if (user$ | async; as user) {
+    <div class="p-4 border-t border-gray-200">
+        <div class="flex items-center gap-3 mb-3">
+            <img [src]="user.picture" [alt]="user.name" class="w-8 h-8 rounded-full" />
+            <div class="truncate">
+                <p class="text-sm font-medium text-gray-900 truncate">{{ user.name }}</p>
+                <p class="text-xs text-gray-500 truncate">{{ user.email }}</p>
+            </div>
+        </div>
+        <button (click)="logout()"
+            class="flex items-center gap-3 px-4 py-2 w-full text-sm font-medium text-red-600 rounded-lg hover:bg-red-50 transition-colors cursor-pointer">
+            <i class="fa fa-right-from-bracket w-5 text-center"></i>
+            <span>Sair</span>
+        </button>
+    </div>
+    }
 </aside>
